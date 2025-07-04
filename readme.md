@@ -4,7 +4,7 @@
 Este projeto é uma vitrine das minhas habilidades em desenvolvimento web front-end, mostrando minha paixão por criar interfaces intuitivas e funcionais.
 
 ## 🚀 Sobre o Projeto
-Este perfil pessoal foi desenvolvido com o objetivo de demonstrar minhas competências em HTML5, CSS3 e JavaScript, seguindo as melhores práticas de desenvolvimento web semântico e responsivo. É a minha porta de entrada para o mundo da programação e um espaço para compartilhar meus projetos e aprendizados.
+Este perfil pessoal foi desenvolvido com o objetivo de demonstrar minhas competências em HTML5, CSS3  seguindo as melhores práticas de desenvolvimento web semântico e responsivo. É a minha porta de entrada para o mundo da programação e um espaço para compartilhar meus projetos e aprendizados.
 
 ## ✨ Funcionalidades
 - **Navegação Clara**: Menu de navegação intuitivo com âncoras para as diferentes seções do perfil.
@@ -16,7 +16,6 @@ Este perfil pessoal foi desenvolvido com o objetivo de demonstrar minhas compet�
 ## 🛠️ Tecnologias Utilizadas
 - **HTML5**: Estruturação semântica do conteúdo.
 - **CSS3**: Estilização e layout, com uso de Flexbox e CSS Grid.
-- **JavaScript**: Para funcionalidades interativas (como a animação de digitação).
 - **Font Awesome**: Para ícones.
 - **Google Fonts**: Para tipografia personalizada.
 
