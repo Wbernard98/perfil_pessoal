@@ -28,8 +28,8 @@ Você pode visualizar o perfil pessoal online [clicando aqui](https://github.com
 git clone https://github.com/Wbernard98/https://github.com/Wbernard98/perfil_pessoal.git
 ```
 ### 📧 Contato
-## Email: wellington.vargas.bernardes80@gmail.com
+- Email: wellington.vargas.bernardes80@gmail.com
 
-## LinkedIn: www.linkedin.com/in/wellington-bernardes-dev
+- LinkedIn: www.linkedin.com/in/wellington-bernardes-dev
 
-## GitHub: Wbernard98
+- GitHub: Wbernard98
