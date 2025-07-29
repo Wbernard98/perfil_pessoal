@@ -170,7 +170,7 @@ body {
 /* Primeira linha: "WELLINGTON " (11 caracteres, incluindo o espaço) */
 .hero-section h1 .typed-line:nth-child(1) {
     animation: typing-line 0.8s steps(11, end)forwards,
-        /* blink-caret .75s step-end infinite, cursor ficar piscando */ 
+        /* blink-caret .75s step-end infinite, cursor ficar piscando */
         remote-caret 0.1s forwards;
     animation-delay: 0.5s, 0.5s, calc(0.5s +0.8s);
 }
@@ -179,7 +179,7 @@ body {
 .hero-section h1 .typed-line:nth-child(2) {
     animation:
         typing-line 0.5s steps(6, end)forwards,
-       /* blink-caret .75s step-end infinite, cursor ficar piscando */
+        /* blink-caret .75s step-end infinite, cursor ficar piscando */
         remove-caret 0.1s forwards;
     --delay-line2: calc(0.5s + 0.8s + 0.2s);
     animation-delay: var(--delay-line2), var(--delay-line2), calc(var(--delay-line2) + 0.5s);
@@ -188,11 +188,14 @@ body {
 /* Terceira linha: "BERNARDES" (9 caracteres) */
 .hero-section h1 .typed-line:nth-child(3) {
     animation:
-        typing-line 1s steps(9, end) forwards, /* Duração ajustada para 1s */
+        typing-line 1s steps(9, end) forwards,
+        /* Duração ajustada para 1s */
         blink-caret .75s step-end infinite;
-    --delay-line3: calc(0.5s + 0.8s + 0.2s + 0.5s + 0.2s); /* Delay calculado */
+    --delay-line3: calc(0.5s + 0.8s + 0.2s + 0.5s + 0.2s);
+    /* Delay calculado */
     animation-delay: var(--delay-line3), var(--delay-line3);
 }
+
 .hero-section p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
@@ -289,9 +292,11 @@ body {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
+    padding-top: 2rem;
     border-bottom: 2px solid var(--color-metallic-blue);
 }
-.about-me-section p{
+
+.about-me-section p {
     font-size: 1.3rem;
     padding: 2px 2px;
     line-height: 1.8;
@@ -324,11 +329,18 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.skill-item a,
+.project-item a {
+    font-family: 'Michroma', sans-serif;
+    color: var(--color-accent-blue);
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
 .skill-item h3,
 .project-item h3 {
     font-family: 'Michroma', sans-serif;
     color: var(--color-accent-blue);
-    margin-bottom: 1rem;
     font-size: 1.6rem;
 }
 
@@ -336,20 +348,41 @@ body {
 .project-item p {
     font-size: 0.9rem;
     color: var(--color-text-light);
+    padding-top: 1rem;
 }
 
 /* --- Seção de Contato --- */
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; 
+  gap: 20px; 
+}
+
 .contact-info p {
-    margin-bottom: 0.7rem;
-    color: var(--color-text-light);
+  margin: 0; 
 }
 
-.contact-info i {
-    color: var(--color-accent-blue);
-    margin-right: 0.8rem;
-    font-size: 1.2rem;
+.contact-info a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; 
+  height: 40px; 
+  font-size: 24px; 
+  color: #333;
+  text-decoration: none;
+  border: 2px solid #333; 
+  border-radius: 50%; 
+  transition: all 0.3s ease; 
 }
 
+.contact-info a:hover {
+  color: #007bff;
+  border-color: #007bff;
+  transform: translateY(-3px); 
+}
 /* --- Seção Spotify --- */
 .spotify-section {
     text-align: center;
