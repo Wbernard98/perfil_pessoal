@@ -89,6 +89,39 @@ body {
 .search-icon {
     font-size: 1.2rem;
 }
+/* Estilo do botão de tema */
+.theme-toggle {
+    font-size: 1.2rem;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+.theme-toggle:hover {
+    color: var(--color-accent-blue);
+}
+
+/* Definição de cores para o modo claro */
+body.light-mode {
+    --color-dark-background: #f0f0f0;
+    --color-dark-header: #ffffff;
+    --color-text-light: #333333;
+    --color-accent-blue: #007bff;
+    --color-metallic-blue: #c5c6c7;
+    --color-main-container-bg: #f5f5f5;
+    --color-spotify-green: #1db954;
+    --color-spotify-green-hover: #1ed760;
+}
+
+body.light-mode .hero-profile-photo-wrapper {
+    box-shadow: 0 0 25px rgba(0, 123, 255, 0.9);
+    border-color: var(--color-metallic-blue);
+}
+
+body.light-mode .hero-section h1 {
+    text-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
+}
 
 /*-- seção boas vindas (foto e nome)--*/
 .hero-section {
@@ -385,6 +418,80 @@ body {
   border-color: #007bff;
   transform: translateY(-3px); 
 }
+/* Estilo para a nova seção de contato com formulário */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    padding: 2rem;
+    background-color: var(--color-dark-header);
+    border-radius: 8px;
+    border: 1px solid var(--color-metallic-blue);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-blue);
+    font-family: 'Orbitron', sans-serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--color-main-container-bg);
+    border: 1px solid var(--color-metallic-blue);
+    border-radius: 5px;
+    color: var(--color-text-light);
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 5px var(--color-accent-blue);
+}
+
+.contact-form .submit-button {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--color-dark-header);
+    background-color: var(--color-accent-blue);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.contact-form .submit-button:hover {
+    background-color: #55f0e9;
+    transform: translateY(-2px);
+}
+
+/* Estilo para as mensagens de erro */
+.error-message {
+    display: block;
+    color: #ff5555;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    height: 1.2rem; /* Reserva espaço para evitar que a página "pule" */
+}
+
+/* Estilo para campos inválidos */
+.invalid {
+    border-color: #ff5555 !important;
+    box-shadow: 0 0 5px #ff5555 !important;
+}
 /* --- Seção Spotify --- */
 .spotify-section {
     text-align: center;
@@ -475,6 +582,39 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Estilo para os botões de filtro */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 1px solid var(--color-metallic-blue);
+    color: var(--color-text-light);
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-main-container-bg);
+    border-color: var(--color-accent-blue);
+    color: var(--color-accent-blue);
+}
+
+.filter-btn.active {
+    background-color: var(--color-accent-blue);
+    color: var(--color-dark-header);
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 10px var(--color-accent-blue);
+}
 /* Animações de Entrada e Efeitos */
 @keyframes pulse-glow {
     0% { box-shadow: 0 0 15px var(--color-accent-blue); }
@@ -521,4 +661,67 @@ footer {
 
 .contact-info a:hover {
     animation: halo-spin 1s infinite;
+}
+/* Melhorar o foco para navegação por teclado */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+    outline: 2px solid var(--color-accent-blue);
+    outline-offset: 3px;
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 8px var(--color-accent-blue);
+}
+/* Estilo para a nova seção de Aprendizados */
+.learnings-section {
+    padding-bottom: 2rem;
+}
+
+.learnings-section h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-accent-blue);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 2rem;
+    border-bottom: 2px solid var(--color-metallic-blue);
+}
+
+.learnings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.learning-post {
+    background-color: var(--color-dark-header);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--color-metallic-blue);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+}
+
+.learning-post h3 {
+    font-family: 'Michroma', sans-serif;
+    color: var(--color-accent-blue);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.learning-post .post-date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+    opacity: 0.7;
+}
+
+.learning-post p {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
 }
