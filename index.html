@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Perfil - Wellington Vargas Bernardes</title>
+  <link rel="stylesheet" href="/stile/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">Meu Portifólio</div>
+      <ul class="nav-links">
+        <li><a href="#about-me">Sobre mim</a></li>
+        <li><a href="#skills">Habilidades</a></li>
+        <li><a href="#projects">Projetos</a></li>
+        <li><a href="#contact">Contato</a></li>
+        <li><a href="#learnings">Aprendizados</a></li>
+        <li>
+          <a href="#" class="search-icon"><i class="fas fa-search"></i></a>
+        </li>
+        <a href="#" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </a>
+
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero-section">
+    <div class="hero-profile-photo-wrapper">
+      <img src="/galeria_de_img/WhatsApp Image 2023-11-20 at 19.53.00.jpeg" alt="Minha Foto de Perfil"
+        class="hero-profile-photo" />
+    </div>
+    <div class="hero-content">
+      <h1>
+        <span class="typed-line">WELLINGTON</span>
+        <span class="typed-line">VARGAS</span>
+        <span class="typed-line">BERNARDES</span>
+      </h1>
+      <p>Nada será fácil! Corra atrás de seus sonhos!</p>
+    </div>
+  </section>
+
+  <main class="profile-container">
+    <section class="content-area">
+      <section id="about-me" class="about-me-section">
+        <h2>Sobre Mim</h2>
+        <p>
+          Sou Wellington Bernardes, formado em Sistemas para Internet e com Pós-graduação concluída em Cibersegurança e
+          Defesa Cibernética.
+        </p>
+        <p>
+          Estou em busca de uma oportunidade de vaga júnior, onde eu possa aplicar na prática os conhecimentos
+          adquiridos, evoluir profissionalmente e contribuir com soluções reais para empresas e projetos. Me considero
+          uma pessoa dedicada, curiosa e focada em aprendizagem contínua. Acredito que com esforço e colaboração podemos
+          transformar ideias em soluções eficientes e acessíveis, por isso busco uma oportunidade para atuar como
+          Desenvolvedor Full Stack Júnior, Desenvolvedor Front-End Júnior,Suporte Técico e QA(Garantia de Qualidade).
+        </p>
+      </section>
+
+      <section id="skills" class="skills-section">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3><i class="fab fa-html5"></i> HTML/CSS <i class="fab fa-css3-alt"></i></h3>
+            <p>Domínio em estruturação e estilização de páginas web.</p>
+          </div>
+          <div class="skill-item">
+            <h3><i class="fab fa-js"></i> JavaScript</h3>
+            <p>Conhecimento em lógica de programação e manipulação de DOM.</p>
+          </div>
+          <div class="skill-item">
+            <h3><i class="fas fa-cogs"></i> Lógica de Programação</h3>
+            <p>Lógica de programação (estruturas de controle, algoritmos, POO, funções)</p>
+          </div>
+          <div class="skill-item">
+            <h3><i class="fab fa-git-alt"></i> Git/GitHub <i class="fab fa-github"></i></h3>
+            <p>Controle de versão e colaboração em projetos.</p>
+          </div>
+          <div class="skill-item">
+            <h3><i class="fab fa-react"></i> React</h3>
+            <p>Criação de interfaces de usuário dinâmicas com base em componentes.</p>
+          </div>
+        </div>
+      </section>
+
+<section id="projects" class="projects-section">
+    <h2>Projetos</h2>
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="javascript">JavaScript</button>
+        <button class="filter-btn" data-filter="react">React</button>
+        <button class="filter-btn" data-filter="qa">QA/Automação</button>
+    </div>
+    <div class="projects-grid">
+        <div class="project-item" data-category="qa">
+            <a href="https://github.com/Wbernard98/ProjetoFinal_Wellington_Bernardes_Compass.git">
+                <i class="fab fa-fw fa-gem"></i> Teste de Automação com Ruby
+            </a>
+            <p>Aqui está o teste de automação feito na 5ª Sprint da trilha Reality Stone. Automação do site `https://front.serverest.dev/login` para o login, cadastro e uma pesquisa na home.</p>
+        </div>
+        <div class="project-item" data-category="javascript">
+            <a href="https://github.com/Wbernard98/lista2-prati.git">
+                <i class="fab fa-js"></i> Exercícios de JavaScript
+            </a>
+            <p>Este repositório contém a resolução de exercícios práticos focados em estruturas de controle avançadas, funções (incluindo recursão, debounce e memoization) e manipulação de arrays e objetos complexos em JavaScript.</p>
+        </div>
+        <div class="project-item" data-category="javascript">
+            <a href="https://github.com/Wbernard98/condicaodotempo.git">
+                <i class="fas fa-cloud-sun"></i> Condições do Tempo
+            </a>
+            <p>Este projeto é uma aplicação web que permite ao usuário pesquisar as condições climáticas em tempo real de qualquer cidade do mundo.</p>
+        </div>
+        <div class="project-item" data-category="javascript">
+            <a href="https://github.com/Wbernard98/Consumindo-API.git">
+                <i class="fas fa-network-wired"></i> Projeto Integração com APIs
+            </a>
+            <p>Projeto desenvolvido para praticar consumo de APIs públicas utilizando JavaScript puro. Integra três serviços diferentes com interfaces dedicadas.</p>
+        </div>
+        <div class="project-item" data-category="react">
+            <a href="https://github.com/Wbernard98/Atividade5_maisprati.git">
+                <i class="fab fa-react"></i> Buscador de Filmes
+            </a>
+            <p>Este é um projeto de uma aplicação web para buscar filmes, visualizar detalhes e gerenciar uma lista de favoritos. O aplicativo utiliza a API OMDb para obter os dados dos filmes e é construído com React.js.</p>
+        </div>
+        <div class="project-item" data-category="react">
+            <a href="https://github.com/Wbernard98/Atividade-06MiniLoja.git">
+                <i class="fab fa-react"></i> Mini-Loja Virtual React
+            </a>
+            <p>Uma aplicação React simples de e-commerce que demonstra e compara quatro diferentes abordagens de estilização: CSS Global, CSS Modules, Tailwind CSS e Styled Components.</p>
+        </div>
+    </div>
+</section>
+<section id="learnings" class="learnings-section">
+    <h2>Meus Aprendizados</h2>
+    <div class="learnings-grid">
+        <div class="learning-post">
+            <h3>Primeiro Post: Introdução à Acessibilidade Web</h3>
+            <p class="post-date">22 de Setembro de 2025</p>
+            <p>Aprendi sobre a importância de usar HTML semântico, texto alternativo para imagens e como o foco do teclado é crucial para a navegação de usuários com deficiência. Um passo fundamental para construir sites mais inclusivos.</p>
+        </div>
+
+        </div>
+</section>
+
+ <section id="contact" class="contact-section">
+    <h2>Contato</h2>
+    <div class="contact-info">
+        <a href="mailto:wellington.vargas.bernardes80@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/wellington-bernardes-dev"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Wbernard98"><i class="fab fa-github"></i></a>
+    </div>
+</section>
+      <section class="spotify-section">
+        <a href="https://open.spotify.com/playlist/3fMSeQj1HNsed3JmG4qoyk?si=UgmXQ9n9RJmJR9qN6s448g&pi=hnMeRrv8R8yUh"
+          target="_blank" class="spotify-button">
+          <i class="fab fa-spotify"></i> Minha Playlist de Música
+        </a>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2025 Wellington Vargas Bernardes. Todos os direitos reservados.
+    </p>
+  </footer>
+  <script src="./estrutura/Script.js"></script>
+</body>
+
+</html>
