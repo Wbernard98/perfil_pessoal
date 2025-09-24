@@ -19,7 +19,6 @@
     /* Verde do Spotify */
     --color-spotify-green-hover: #1ed760;
     /* Verde do Spotify ao passar o mouse */
-
 }
 
 * {
@@ -38,7 +37,7 @@ body {
     min-height: 100vh;
 }
 
-/*Cabeçalho fixo navbar*/
+/*-- Cabeçalho e Navegação --*/
 .main-header {
     background-color: var(--color-dark-header);
     padding: 1rem 2rem;
@@ -46,8 +45,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100vw;
-    /* Ocupa 100% da largura da viewport */
+    width: 100%;
 }
 
 .navbar {
@@ -66,9 +64,17 @@ body {
     letter-spacing: 2px;
 }
 
+/* Estilo para desktop */
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
@@ -86,24 +92,18 @@ body {
     color: var(--color-accent-blue);
 }
 
-.search-icon {
-    font-size: 1.2rem;
-}
-
-/* Estilo do botão de tema */
+.search-icon,
 .theme-toggle {
     font-size: 1.2rem;
-    color: var(--color-text-light);
-    transition: color 0.3s ease;
-    cursor: pointer;
     margin-left: 2rem;
 }
 
-.theme-toggle:hover {
-    color: var(--color-accent-blue);
+/* Esconde o menu hambúrguer por padrão em desktop */
+.hamburger-menu {
+    display: none;
 }
 
-/* Definição de cores para o modo claro */
+/*-- Modo Claro --*/
 body.light-mode {
     --color-dark-background: #f0f0f0;
     --color-dark-header: #ffffff;
@@ -111,11 +111,10 @@ body.light-mode {
     --color-accent-blue: #007bff;
     --color-metallic-blue: #c5c6c7;
     --color-main-container-bg: #f5f5f5;
-    --color-spotify-green: #1db954;
-    --color-spotify-green-hover: #1ed760;
 }
 
-body.light-mode .hero-profile-photo-wrapper {
+body.light-mode .hero-profile-photo-wrapper,
+body.light-mode .hero-photo-mobile {
     box-shadow: 0 0 25px rgba(0, 123, 255, 0.9);
     border-color: var(--color-metallic-blue);
 }
@@ -124,7 +123,7 @@ body.light-mode .hero-section h1 {
     text-shadow: 0 0 15px rgba(0, 123, 255, 0.9);
 }
 
-/*-- seção boas vindas (foto e nome)--*/
+/*-- Seção Hero (Boas-Vindas) --*/
 .hero-section {
     padding: 6rem 2rem;
     display: flex;
@@ -141,9 +140,9 @@ body.light-mode .hero-section h1 {
     margin-right: auto;
 }
 
-
+/* A foto principal é mostrada apenas no desktop */
 .hero-profile-photo-wrapper {
-    width: 400vh;
+    width: 400px; /* CORRIGIDO: de 400vh para 400px */
     height: 400px;
     border-radius: 50%;
     overflow: hidden;
@@ -151,13 +150,18 @@ body.light-mode .hero-section h1 {
     box-shadow: 0 0 25px rgba(102, 252, 241, 0.9);
     margin-bottom: 1.5rem;
     margin-left: 10rem;
+    display: block;
+}
+
+/* A foto de mobile é escondida no desktop */
+.hero-photo-mobile {
+    display: none;
 }
 
 .hero-profile-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .hero-section h1 {
@@ -189,111 +193,12 @@ body.light-mode .hero-section h1 {
     transition: all 0.3s ease;
 }
 
-/* Os spans dentro do H1 apenas garantem a quebra de linha visual, sem efeitos de digitação */
-.hero-section h1 .typed-line {
-    display: inline;
-    /*propriedades para digitação*/
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid transparent;
-    width: 0;
-    animation-fill-mode: forwards;
-    display: inline-block;
-}
-
-/* Primeira linha: "WELLINGTON " (11 caracteres, incluindo o espaço) */
-.hero-section h1 .typed-line:nth-child(1) {
-    animation: typing-line 0.8s steps(11, end)forwards,
-        /* blink-caret .75s step-end infinite, cursor ficar piscando */
-        remote-caret 0.1s forwards;
-    animation-delay: 0.5s, 0.5s, calc(0.5s +0.8s);
-}
-
-/* Segunda linha: "VARGAS" (6 caracteres) */
-.hero-section h1 .typed-line:nth-child(2) {
-    animation:
-        typing-line 0.5s steps(6, end)forwards,
-        /* blink-caret .75s step-end infinite, cursor ficar piscando */
-        remove-caret 0.1s forwards;
-    --delay-line2: calc(0.5s + 0.8s + 0.2s);
-    animation-delay: var(--delay-line2), var(--delay-line2), calc(var(--delay-line2) + 0.5s);
-}
-
-/* Terceira linha: "BERNARDES" (9 caracteres) */
-.hero-section h1 .typed-line:nth-child(3) {
-    animation:
-        typing-line 1s steps(9, end) forwards,
-        /* Duração ajustada para 1s */
-        blink-caret .75s step-end infinite;
-    --delay-line3: calc(0.5s + 0.8s + 0.2s + 0.5s + 0.2s);
-    /* Delay calculado */
-    animation-delay: var(--delay-line3), var(--delay-line3);
-}
-
 .hero-section p {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
     color: var(--color-text-light);
     margin-top: 0.5rem;
-    /* Propriedades de digitação para a frase */
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid var(--color-accent-blue);
-    /* Cursor piscando */
-    width: 0;
-    animation-fill-mode: forwards;
-    /* "Nada será fácil! Corra atrás de seus sonhos" (41 caracteres) */
-    animation:
-        typing-slogan 3s steps(41, end) forwards,
-        blink-caret .75s step-end infinite;
-    /* Delay para o slogan iniciar após todas as linhas do nome terminarem */
-    animation-delay: calc(0.5s + 0.8s + 0.2s + 0.5s + 0.2s + 0.7s + 0.5s),
-        /* Para typing */
-        calc(0.5s + 0.8s + 0.2s + 0.5s + 0.2s + 0.7s + 0.5s + 3s);
-    /* Para blink-caret */
 }
-
-
-/*KEyframes*/
-@keyframes typing-line {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
-
-@keyframes typing-slogan {
-    from {
-        width: 0
-    }
-
-    to {
-        width: 100%
-    }
-}
-
-@keyframes blink-caret {
-
-    from,
-    to {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: var(--color-accent-blue);
-    }
-}
-
-@keyframes remove-caret {
-    to {
-        border-color: transparent;
-    }
-}
-
-
 
 /* --- Container Principal do Perfil --- */
 .profile-container {
@@ -320,7 +225,8 @@ body.light-mode .hero-section h1 {
 .skills-section h2,
 .projects-section h2,
 .contact-section h2,
-.about-me-section h2 {
+.about-me-section h2,
+.learnings-section h2 {
     font-family: 'Orbitron', sans-serif;
     color: var(--color-accent-blue);
     font-size: 2rem;
@@ -336,52 +242,46 @@ body.light-mode .hero-section h1 {
     line-height: 1.8;
     color: var(--color-text-light);
     text-align: justify;
-
 }
 
 .skills-grid,
-.projects-grid {
+.projects-grid,
+.learnings-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .skill-item,
-.project-item {
+.project-item,
+.learning-post {
     background-color: var(--color-dark-header);
     padding: 1.5rem;
     border-radius: 8px;
     border: 1px solid var(--color-metallic-blue);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shaow 0.3s ease;
-}
-
-.skill-item:hover,
-.project-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.skill-item a,
+.skill-item:hover,
+.project-item:hover,
+.learning-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
+}
+
+.skill-item h3,
 .project-item a {
     font-family: 'Michroma', sans-serif;
     color: var(--color-accent-blue);
-    margin-bottom: 1rem;
     font-size: 1.6rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.skill-item h3,
-.project-item h3 {
-    font-family: 'Michroma', sans-serif;
-    color: var(--color-accent-blue);
-    font-size: 1.6rem;
-}
-
 .skill-item p,
-.project-item p {
+.project-item p,
+.learning-post p {
     font-size: 0.9rem;
     color: var(--color-text-light);
     padding-top: 1rem;
@@ -390,33 +290,19 @@ body.light-mode .hero-section h1 {
 /* --- Seção de Contato --- */
 .contact-info {
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
     gap: 20px;
 }
 
-.contact-info p {
-    margin: 0;
-}
-
 .contact-info a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
     font-size: 24px;
-    color: #333;
+    color: var(--color-text-light); /* CORRIGIDO: de #333 para a variável */
     text-decoration: none;
-    border: 2px solid #333;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-info a:hover {
-    color: #007bff;
-    border-color: #007bff;
+    color: var(--color-accent-blue);
     transform: translateY(-3px);
 }
 
@@ -450,68 +336,7 @@ body.light-mode .hero-section h1 {
     transform: translateY(-3px);
 }
 
-/*rodape footer*/
-footer {
-    background-color: var(--color-dark-header);
-    color: var(--color-text-light);
-    text-align: center;
-    padding: 1rem;
-    margin-top: auto;
-    border-top: 1px solid var(--color-metallic-blue);
-}
-
-/* --- Responsividade Básica --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .nav-links li {
-        margin: 0.5rem 1rem;
-    }
-
-    .hero-section {
-        padding: 4rem 1rem;
-        min-height: 40vh;
-    }
-
-    .hero-profile-photo-wrapper {
-        width: 150px;
-        height: 150px;
-    }
-
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-section p {
-        font-size: 1.2rem;
-    }
-
-    .profile-container {
-        flex-direction: column;
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-
-    .content-area {
-        padding: 1rem 0;
-    }
-
-    .skills-grid,
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Estilo para os botões de filtro */
+/* --- Filtros --- */
 .filter-buttons {
     display: flex;
     justify-content: center;
@@ -545,141 +370,115 @@ footer {
     box-shadow: 0 0 10px var(--color-accent-blue);
 }
 
-/* Animações de Entrada e Efeitos */
-@keyframes pulse-glow {
-    0% {
-        box-shadow: 0 0 15px var(--color-accent-blue);
-    }
-
-    50% {
-        box-shadow: 0 0 25px var(--color-accent-blue), 0 0 40px rgba(102, 252, 241, 0.7);
-    }
-
-    100% {
-        box-shadow: 0 0 15px var(--color-accent-blue);
-    }
-}
-
-@keyframes slide-up-fade {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes halo-spin {
-    from {
-        box-shadow: 0 0 0 0 rgba(102, 252, 241, 0.8);
-    }
-
-    to {
-        box-shadow: 0 0 0 10px rgba(102, 252, 241, 0);
-    }
-}
-
-/* Aplicação das Animações */
-.hero-profile-photo-wrapper {
-    animation: pulse-glow 2s infinite ease-in-out;
-}
-
-.skills-grid .skill-item,
-.projects-grid .project-item {
-    animation: slide-up-fade 0.8s forwards;
-    opacity: 0;
-    /* Essencial para a animação de entrada */
-}
-
-/* Efeito de cascata para os cards */
-.skills-grid .skill-item:nth-child(1),
-.projects-grid .project-item:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.skills-grid .skill-item:nth-child(2),
-.projects-grid .project-item:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.skills-grid .skill-item:nth-child(3),
-.projects-grid .project-item:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.skills-grid .skill-item:nth-child(4),
-.projects-grid .project-item:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.contact-info a:hover {
-    animation: halo-spin 1s infinite;
-}
-
-/* Melhorar o foco para navegação por teclado */
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-    outline: 2px solid var(--color-accent-blue);
-    outline-offset: 3px;
-    border-color: var(--color-accent-blue);
-    box-shadow: 0 0 8px var(--color-accent-blue);
-}
-
-/* Estilo para a nova seção de Aprendizados */
-.learnings-section {
-    padding-bottom: 2rem;
-}
-
-.learnings-section h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: var(--color-accent-blue);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    padding-top: 2rem;
-    border-bottom: 2px solid var(--color-metallic-blue);
-}
-
-.learnings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.learning-post {
+/* --- Rodapé --- */
+footer {
     background-color: var(--color-dark-header);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid var(--color-metallic-blue);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.learning-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(102, 252, 241, 0.6);
-}
-
-.learning-post h3 {
-    font-family: 'Michroma', sans-serif;
-    color: var(--color-accent-blue);
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.learning-post .post-date {
-    font-size: 0.8rem;
     color: var(--color-text-light);
-    margin-bottom: 1rem;
-    opacity: 0.7;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    border-top: 1px solid var(--color-metallic-blue);
 }
 
-.learning-post p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
+/*=================================
+     RESPONSIVIDADE PARA CELULAR
+==================================*/
+@media (max-width: 768px) {
+    /* Mostra o menu hambúrguer e esconde a navegação padrão */
+    .hamburger-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .hamburger-menu .bar {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: var(--color-text-light);
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu {
+        display: none; /* ESCONDIDO POR PADRÃO */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Alinhado com a altura do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--color-dark-header);
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        padding: 2rem 0;
+        text-align: center;
+    }
+    
+    .nav-menu.active {
+        display: flex; /* EXIBIDO QUANDO A CLASSE 'active' É ADICIONADA VIA JS */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links li {
+        margin: 1rem 0;
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+    }
+
+    /* Oculta a foto de desktop e exibe a de mobile */
+    .hero-profile-photo-wrapper {
+        display: none;
+    }
+    .hero-photo-mobile {
+        display: block;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 5px solid var(--color-metallic-blue);
+        box-shadow: 0 0 25px rgba(102, 252, 241, 0.9);
+        margin: 2rem auto;
+    }
+
+    /* Ajustes gerais de layout */
+    .hero-section {
+        flex-direction: column;
+        padding: 4rem 1rem;
+        min-height: auto;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .profile-container {
+        flex-direction: column;
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+
+    .content-area {
+        padding: 1rem 0;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .learnings-grid {
+        grid-template-columns: 1fr;
+    }
+
 }
