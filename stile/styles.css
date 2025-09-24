@@ -89,6 +89,7 @@ body {
 .search-icon {
     font-size: 1.2rem;
 }
+
 /* Estilo do botão de tema */
 .theme-toggle {
     font-size: 1.2rem;
@@ -388,110 +389,37 @@ body.light-mode .hero-section h1 {
 
 /* --- Seção de Contato --- */
 .contact-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center; 
-  gap: 20px; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .contact-info p {
-  margin: 0; 
+    margin: 0;
 }
 
 .contact-info a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40px; 
-  height: 40px; 
-  font-size: 24px; 
-  color: #333;
-  text-decoration: none;
-  border: 2px solid #333; 
-  border-radius: 50%; 
-  transition: all 0.3s ease; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    border: 2px solid #333;
+    border-radius: 50%;
+    transition: all 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #007bff;
-  border-color: #007bff;
-  transform: translateY(-3px); 
-}
-/* Estilo para a nova seção de contato com formulário */
-.contact-form-container {
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    padding: 2rem;
-    background-color: var(--color-dark-header);
-    border-radius: 8px;
-    border: 1px solid var(--color-metallic-blue);
+    color: #007bff;
+    border-color: #007bff;
+    transform: translateY(-3px);
 }
 
-.contact-form .form-group {
-    margin-bottom: 1.5rem;
-}
-
-.contact-form label {
-    display: block;
-    margin-bottom: 0.5rem;
-    color: var(--color-accent-blue);
-    font-family: 'Orbitron', sans-serif;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    background-color: var(--color-main-container-bg);
-    border: 1px solid var(--color-metallic-blue);
-    border-radius: 5px;
-    color: var(--color-text-light);
-    font-family: 'Roboto', sans-serif;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--color-accent-blue);
-    box-shadow: 0 0 5px var(--color-accent-blue);
-}
-
-.contact-form .submit-button {
-    display: block;
-    width: 100%;
-    padding: 1rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--color-dark-header);
-    background-color: var(--color-accent-blue);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-transform: uppercase;
-}
-
-.contact-form .submit-button:hover {
-    background-color: #55f0e9;
-    transform: translateY(-2px);
-}
-
-/* Estilo para as mensagens de erro */
-.error-message {
-    display: block;
-    color: #ff5555;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    height: 1.2rem; /* Reserva espaço para evitar que a página "pule" */
-}
-
-/* Estilo para campos inválidos */
-.invalid {
-    border-color: #ff5555 !important;
-    box-shadow: 0 0 5px #ff5555 !important;
-}
 /* --- Seção Spotify --- */
 .spotify-section {
     text-align: center;
@@ -582,6 +510,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 /* Estilo para os botões de filtro */
 .filter-buttons {
     display: flex;
@@ -615,11 +544,20 @@ footer {
     border-color: var(--color-accent-blue);
     box-shadow: 0 0 10px var(--color-accent-blue);
 }
+
 /* Animações de Entrada e Efeitos */
 @keyframes pulse-glow {
-    0% { box-shadow: 0 0 15px var(--color-accent-blue); }
-    50% { box-shadow: 0 0 25px var(--color-accent-blue), 0 0 40px rgba(102, 252, 241, 0.7); }
-    100% { box-shadow: 0 0 15px var(--color-accent-blue); }
+    0% {
+        box-shadow: 0 0 15px var(--color-accent-blue);
+    }
+
+    50% {
+        box-shadow: 0 0 25px var(--color-accent-blue), 0 0 40px rgba(102, 252, 241, 0.7);
+    }
+
+    100% {
+        box-shadow: 0 0 15px var(--color-accent-blue);
+    }
 }
 
 @keyframes slide-up-fade {
@@ -627,6 +565,7 @@ footer {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -637,6 +576,7 @@ footer {
     from {
         box-shadow: 0 0 0 0 rgba(102, 252, 241, 0.8);
     }
+
     to {
         box-shadow: 0 0 0 10px rgba(102, 252, 241, 0);
     }
@@ -650,18 +590,35 @@ footer {
 .skills-grid .skill-item,
 .projects-grid .project-item {
     animation: slide-up-fade 0.8s forwards;
-    opacity: 0; /* Essencial para a animação de entrada */
+    opacity: 0;
+    /* Essencial para a animação de entrada */
 }
 
 /* Efeito de cascata para os cards */
-.skills-grid .skill-item:nth-child(1), .projects-grid .project-item:nth-child(1) { animation-delay: 0.1s; }
-.skills-grid .skill-item:nth-child(2), .projects-grid .project-item:nth-child(2) { animation-delay: 0.2s; }
-.skills-grid .skill-item:nth-child(3), .projects-grid .project-item:nth-child(3) { animation-delay: 0.3s; }
-.skills-grid .skill-item:nth-child(4), .projects-grid .project-item:nth-child(4) { animation-delay: 0.4s; }
+.skills-grid .skill-item:nth-child(1),
+.projects-grid .project-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skills-grid .skill-item:nth-child(2),
+.projects-grid .project-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skills-grid .skill-item:nth-child(3),
+.projects-grid .project-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skills-grid .skill-item:nth-child(4),
+.projects-grid .project-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
 
 .contact-info a:hover {
     animation: halo-spin 1s infinite;
 }
+
 /* Melhorar o foco para navegação por teclado */
 a:focus,
 button:focus,
@@ -672,6 +629,7 @@ textarea:focus {
     border-color: var(--color-accent-blue);
     box-shadow: 0 0 8px var(--color-accent-blue);
 }
+
 /* Estilo para a nova seção de Aprendizados */
 .learnings-section {
     padding-bottom: 2rem;
